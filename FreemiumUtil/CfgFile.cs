@@ -14,7 +14,7 @@ namespace FreemiumUtil
     public static class CfgFile
     {
         // We use the common application folder to store the config file.
-        private static readonly string cfgFilePath = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + "\\FreeDriverScout\\";
+        private static readonly string cfgFilePath = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + "\\DriversGalaxy\\";
         private static readonly string cfgFileName = cfgFilePath + "freemium.cfg";
 
         /// <summary>
@@ -157,7 +157,7 @@ namespace FreemiumUtil
                 {
                     using (StreamWriter writer = File.CreateText(cfgFileName))
                     {
-                        writer.WriteLine("[Freemiun Config File]");
+                        writer.WriteLine("[DriversGalaxy Config File]");
                         writer.WriteLine("Version=1.0");
                         writer.WriteLine("Lang=" + CultureInfo.CurrentCulture.ToString());
                         writer.WriteLine("FirstRun=1");
