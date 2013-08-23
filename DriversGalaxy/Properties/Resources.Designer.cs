@@ -404,7 +404,7 @@ namespace DriversGalaxy.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Downloaded (0} of {1}.
+        ///   Looks up a localized string similar to Downloaded {0} of {1}.
         /// </summary>
         internal static string DownloadStatus {
             get {
@@ -1626,6 +1626,15 @@ namespace DriversGalaxy.Properties {
         internal static string WindowsTaskRegistrationInfo {
             get {
                 return ResourceManager.GetString("WindowsTaskRegistrationInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to License key not valid. Please try again!.
+        /// </summary>
+        internal static string WrongLicenseKey {
+            get {
+                return ResourceManager.GetString("WrongLicenseKey", resourceCulture);
             }
         }
         

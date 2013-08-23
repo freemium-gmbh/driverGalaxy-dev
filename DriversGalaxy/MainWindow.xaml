@@ -30,6 +30,7 @@
         <routine:BackupStatusEqualsToVisibilityConverter x:Key="BackupStatusEqualsToVisibilityConverter" />
         <routine:AnyPropertyEqualsToVisibilityConverter x:Key="AnyPropertyEqualsToVisibilityConverter" />
         <routine:ScanStatusEqualsToEnablingConverter x:Key="ScanStatusEqualsToEnablingConverter" />
+        <routine:PaymentStatusToVisibilityConverter x:Key="PaymentStatusToVisibilityConverter" />
     </Window.Resources>
     <Border MouseLeftButtonDown="DragWindow"
 			Style="{StaticResource WindowBorder}">
@@ -47,7 +48,7 @@
                 <!--
 					*****************************************************************************
 					
-					Header
+					HeaderelScan
 					
 					*****************************************************************************
 					-->
@@ -396,11 +397,30 @@
                 
 					*****************************************************************************
 					-->
-                <Grid  Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="2" >
-                    <views:PanelPaymentNeeded HorizontalAlignment="Left"
-											  VerticalAlignment="Top"
-											  Visibility="{Binding Path=Status, Converter={StaticResource PropertyEqualsToVisibilityConverter}, ConverterParameter={x:Static models:ScanStatus.PaymentNeeded}}" />
+                <Grid  Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="2">
+                    <Grid x:Name="PanelLicense"
+						  Loaded="ElementLoaded"
+						  Visibility="{Binding Path=Status, Converter={StaticResource PaymentStatusToVisibilityConverter}}"
+						  HorizontalAlignment="Left"
+						  VerticalAlignment="Top">
 
+                        <views:PanelPaymentNeeded HorizontalAlignment="Left"
+                                                  Loaded="ElementLoaded"
+											      VerticalAlignment="Top"
+											      Visibility="{Binding Path=Status, Converter={StaticResource PropertyEqualsToVisibilityConverter}, ConverterParameter={x:Static models:ScanStatus.PaymentNeeded}}" />
+
+                        <!--
+	    				*****************************************************************************
+					
+				        License Key Enter Panel
+                
+					    *****************************************************************************
+				    -->
+                        <views:PanelLicenseKeyEnter HorizontalAlignment="Left"
+                                                    Loaded="ElementLoaded"
+											        VerticalAlignment="Top"
+											        Visibility="{Binding Path=Status, Converter={StaticResource PropertyEqualsToVisibilityConverter}, ConverterParameter={x:Static models:ScanStatus.LicenseKeyEnter}}" />
+                    </Grid>
                 </Grid>
             </Grid>
         </Border>

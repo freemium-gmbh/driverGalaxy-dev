@@ -645,4 +645,10 @@ Es ist möglich, dass der Bildschirm während des Updates kurzzeitig schwarz wir
   <data name="YourAdvantages" xml:space="preserve">
     <value>Ihre vorteile:</value>
   </data>
+  <data name="AlreadyHaveKey" xml:space="preserve">
+    <value>Sie haben bereits einen gültigen Lizenzchlüssel? Bitte hier eingeben und alle Treiber aktualisieren!</value>
+  </data>
+  <data name="WrongLicenseKey" xml:space="preserve">
+    <value>Lizenzschlüssel ungültig. Bitte versuchen Sie es erneut!</value>
+  </data>
 </root>

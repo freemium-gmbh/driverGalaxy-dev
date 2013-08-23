@@ -64,6 +64,16 @@ namespace DriversGalaxy.ViewModels
                 ExecuteDelegate = CheckDeviceForUpdate
             };
 
+            enterLicenseKeyCommand = new SimpleCommand
+            {
+                ExecuteDelegate = x => EnterLicenseKey()
+            };
+
+            verifyLicenseKeyCommand = new SimpleCommand
+            {
+                ExecuteDelegate = x => VerifyLicenseKey()
+            };
+
             updateCommand = new SimpleCommand
             {
                 ExecuteDelegate = x => RunUpdate()
@@ -246,7 +256,9 @@ namespace DriversGalaxy.ViewModels
         readonly ICommand showScanCommand;
         readonly ICommand checkDevicesForUpdateCommand;
         readonly ICommand checkDeviceForUpdateCommand;
-        readonly ICommand updateCommand;
+        readonly ICommand verifyLicenseKeyCommand;
+        readonly ICommand enterLicenseKeyCommand;
+        readonly ICommand updateCommand;        
         readonly ICommand cancelUpdateCommand;
 
         public ICommand ScanCommand
@@ -272,6 +284,16 @@ namespace DriversGalaxy.ViewModels
         public ICommand CheckDeviceForUpdateCommand
         {
             get { return checkDeviceForUpdateCommand; }
+        }
+        
+        public ICommand EnterLicenseKeyCommand
+        {
+            get { return enterLicenseKeyCommand; }
+        }
+
+        public ICommand VerifyLicenseKeyCommand
+        {
+            get { return verifyLicenseKeyCommand; }
         }
 
         public ICommand UpdateCommand
@@ -841,7 +863,6 @@ namespace DriversGalaxy.ViewModels
                 return !RestoringBackup;
             }
         }
-
 
 
 
@@ -1672,6 +1693,11 @@ namespace DriversGalaxy.ViewModels
             Status = ScanStatus.NotStarted;
         }
 
+        void EnterLicenseKey()
+        {
+            Status = ScanStatus.LicenseKeyEnter;
+        }
+
         private bool CheckActivation()
         {
             bool result = false;
@@ -1691,8 +1717,30 @@ namespace DriversGalaxy.ViewModels
             return result;
         }
 
-        private bool IsValidLicense(string product, string key)
+        private bool CheckEnteredLicenseKey(string activationKey)
         {
+            bool result = false;
+            if (!string.IsNullOrEmpty(activationKey))
+            {
+                if (IsValidLicense("driversgalaxy1", activationKey))
+                {
+                    try
+                    {
+                        RegistryKey rk = Registry.LocalMachine.CreateSubKey("Software\\DriversGalaxy");
+                        rk.SetValue("ActivationKey", activationKey);
+                    }
+                    catch
+                    {
+                    }
+                    result = true;
+                }
+            }
+            return result;
+        }
+        
+
+        private bool IsValidLicense(string product, string key)
+        {        
             string url = string.Format("http://license-management.azurewebsites.net/GetKeyValidUntil/{0}/{1} ", product, key);
 
             System.Net.WebRequest req = System.Net.WebRequest.Create(url);
@@ -1715,12 +1763,36 @@ namespace DriversGalaxy.ViewModels
             }
         }
 
+        void VerifyLicenseKey()
+        {
+            var licenseKeyTextBlock = UIUtils.FindChild<TextBox>(Application.Current.MainWindow, "LicenseKey");
+            if (licenseKeyTextBlock != null)
+            {
+                string licenseKey = licenseKeyTextBlock.Text;
+                if (CheckEnteredLicenseKey(licenseKey))
+                {
+                    RunUpdate(true);
+                    return;
+                }
+                else
+                {
+                    WPFMessageBox.Show(Application.Current.MainWindow, LocalizeDictionary.Instance.Culture, WPFLocalizeExtensionHelpers.GetUIString("WrongLicenseKey"),
+                                      "", WPFMessageBoxButton.OKCancel, MessageBoxImage.Warning);
+                }
+            }            
+        }
+
         void RunUpdate()
+        {
+            RunUpdate(false);
+        }
+
+        void RunUpdate(bool activationIsChecked)
         {
             devicesForUpdate = DevicesForScanning.Where(d => d.NeedsUpdate && d.SelectedForUpdate).ToList();
             if (devicesForUpdate.Any())
             {
-                if (CheckActivation())
+                if (activationIsChecked || CheckActivation())
                 {
                     string saveFolder = CfgFile.Get("DriverDownloadsFolder");
                     if (!string.IsNullOrEmpty(saveFolder))
@@ -1756,7 +1828,7 @@ namespace DriversGalaxy.ViewModels
                 else
                 {                    
                     PanelScanHeader = WPFLocalizeExtensionHelpers.GetUIString("UpgradeNow");
-                    Status = ScanStatus.PaymentNeeded;
+                    Status = ScanStatus.PaymentNeeded;                    
                 }
             }
             else

@@ -31,17 +31,11 @@
 								   HorizontalAlignment="{Binding ContentTextAlignment}"
 								   VerticalAlignment="Center"
 								   FontSize="16"
-								   Foreground="#5F5F5F"
+								   Foreground="#b3b3b3"
 								   FontWeight="Bold"
 								   FontFamily="/DriversGalaxy.Infrastructure;component/Fonts/#Helvetica Neue CE 55"
 								   Margin="12 32 20 30"
-								   SnapsToDevicePixels="True">
-							<TextBlock.Effect>
-									<DropShadowEffect BlurRadius="1"
-													  Direction="-90"
-													  Color="#FFFFFF"
-													  ShadowDepth="1" />
-							</TextBlock.Effect>
+								   SnapsToDevicePixels="True">							
 						</TextBlock>
 
 						<StackPanel Grid.Row="1"
@@ -52,35 +46,35 @@
 									SnapsToDevicePixels="True">
                             <Button Content="{lex:LocText Key=Yes, Dict=Resources, Assembly=DriversGalaxy.Infrastructure}"
 									Width="120"
-									Style="{StaticResource BlueRoundedButton}"
+									Style="{StaticResource GreenRoundedButton}"
 									Visibility="{Binding YesNoVisibility}"
 									Command="{Binding YesCommand}"
 									IsDefault="{Binding IsYesDefault}"
 									Margin="3"/>
                             <Button Content="{lex:LocText Key=No, Dict=Resources, Assembly=DriversGalaxy.Infrastructure}"
                                     Width="120"
-									Style="{StaticResource BlueRoundedButton}"
+									Style="{StaticResource GreenRoundedButton}"
 									Visibility="{Binding YesNoVisibility}"
 									Command="{Binding NoCommand}"
 									IsDefault="{Binding IsNoDefault}"
 									Margin="3"/>
                             <Button Content="{lex:LocText Key=Ok, Dict=Resources, Assembly=DriversGalaxy.Infrastructure}"
                                     Width="120"
-									Style="{StaticResource BlueRoundedButton}"
+									Style="{StaticResource GreenRoundedButton}"
 									Visibility="{Binding OkVisibility}"
 									Command="{Binding OkCommand}"
 									IsDefault="{Binding IsOkDefault}"
 									Margin="3"/>
                             <Button Content="{lex:LocText Key=Continue, Dict=Resources, Assembly=DriversGalaxy.Infrastructure}"
                                     Width="120"
-									Style="{StaticResource BlueRoundedButton}"
+									Style="{StaticResource GreenRoundedButton}"
 									Visibility="{Binding ContinueVisibility}"
-									Command="{Binding CotinueCommand}"
+									Command="{Binding ContinueCommand}"
 									IsDefault="{Binding IsContinueDefault}"
 									Margin="3"/>
                             <Button Content="{lex:LocText Key=Cancel, Dict=Resources, Assembly=DriversGalaxy.Infrastructure}"
                                     Width="120"
-									Style="{StaticResource BlueRoundedButton}"
+									Style="{StaticResource GreenRoundedButton}"
 									Visibility="{Binding CancelVisibility}"
 									Command="{Binding CancelCommand}"
 									IsDefault="{Binding IsCancelDefault}"

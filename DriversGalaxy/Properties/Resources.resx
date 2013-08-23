@@ -564,7 +564,7 @@ Select the folder for driver downloads</value>
     <value>Link cannot be opened automatically</value>
   </data>
   <data name="DownloadStatus" xml:space="preserve">
-    <value>Downloaded (0} of {1}</value>
+    <value>Downloaded {0} of {1}</value>
   </data>
   <data name="GoogleMargin" xml:space="preserve">
     <value>-77</value>
@@ -647,5 +647,8 @@ It is possible that the screen may turn black during this update for a short per
   </data>
   <data name="AlreadyHaveKey" xml:space="preserve">
     <value>You already have a license key? Enter here and update all drivers now!</value>
+  </data>
+  <data name="WrongLicenseKey" xml:space="preserve">
+    <value>License key not valid. Please try again!</value>
   </data>
 </root>

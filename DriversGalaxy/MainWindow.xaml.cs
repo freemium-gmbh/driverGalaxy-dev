@@ -154,7 +154,8 @@ namespace DriversGalaxy
                 (PanelBackupAndRestore.Opacity == 0 || PanelBackupAndRestore.Opacity == 1) &&
                 (PanelPreferences.Margin.Top == 0 || PanelPreferences.Margin.Top == -337) &&
                 (PanelScanExclusions.Margin.Top == 0 || PanelScanExclusions.Margin.Top == -337) &&
-                (PanelBackupAndRestore.Margin.Top == 0 || PanelBackupAndRestore.Margin.Top == -337);
+                (PanelBackupAndRestore.Margin.Top == 0 || PanelBackupAndRestore.Margin.Top == -337) &&
+                (PanelLicense.Margin.Top == 0 || PanelLicense.Margin.Top == -576);
         }
 
         void HideCurrentPanel()
@@ -164,6 +165,10 @@ namespace DriversGalaxy
             if (PanelScan.IsVisible) { currentPanel = PanelScan; };
             if (PanelScanExclusions.IsVisible) { currentPanel = PanelScanExclusions; };
             if (PanelBackupAndRestore.IsVisible) { currentPanel = PanelBackupAndRestore; };
+            if (PanelLicense.IsVisible) {
+                PanelScan.Visibility = Visibility.Hidden;
+                currentPanel = PanelLicense; 
+            };
             currentPanel.Visibility = Visibility.Hidden;
         }
 
@@ -186,8 +191,8 @@ namespace DriversGalaxy
         }
 
         public void ShowPanelScan(object sender, RoutedEventArgs e)
-        {
-            if (AllAnimationsComplete() && PanelScan.Visibility != Visibility.Visible)
+        {            
+            if (AllAnimationsComplete() && (PanelScan.Visibility != Visibility.Visible))
             {
                 HideCurrentPanel();
                 PanelScan.Visibility = Visibility.Visible;
@@ -203,7 +208,7 @@ namespace DriversGalaxy
                 LinkPanelScan.Style = navigationButtonFirstSelectedStyle;
                 LinkPanelScanExclusions.Style = navigationButtonStyle;
                 LinkPanelBackupAndRestore.Style = navigationButtonStyle;
-            }
+            }         
         }
 
         void ShowPanelScanExclusions(object sender, RoutedEventArgs e)

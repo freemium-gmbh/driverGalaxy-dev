@@ -145,6 +145,7 @@
     <Compile Include="Routine\Converters\AnyPropertyEqualsToVisibilityConverter.cs" />
     <Compile Include="Routine\Converters\BackupStatusEqualsToVisibilityConverter.cs" />
     <Compile Include="Routine\Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Routine\Converters\PaymentStatusEqualsToVisibilityConverter.cs" />
     <Compile Include="Routine\Converters\ScanStatusEqualsToEnablingConverter.cs" />
     <Compile Include="Routine\Converters\MarginConverter.cs" />
     <Compile Include="Routine\Converters\ProgressPercentageConverter.cs" />
@@ -166,6 +167,9 @@
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="Views\AboutBox.xaml.cs">
       <DependentUpon>AboutBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PanelLicenseKeyEnter.xaml.cs">
+      <DependentUpon>PanelLicenseKeyEnter.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PanelPaymentNeeded.xaml.cs">
       <DependentUpon>PanelPaymentNeeded.xaml</DependentUpon>
@@ -258,6 +262,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\PanelLicenseKeyEnter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\PanelPaymentNeeded.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -331,6 +339,7 @@
     <Content Include="difxapi.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Images\icon-info.png" />
     <Content Include="stduhelper32.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

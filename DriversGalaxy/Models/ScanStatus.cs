@@ -8,6 +8,7 @@ namespace DriversGalaxy.Models
 		ScanFinishedOK,
 		ScanFinishedError,
         PaymentNeeded,
+        LicenseKeyEnter,
 		UpdateStarted,
 		UpdateFinished
 	};
