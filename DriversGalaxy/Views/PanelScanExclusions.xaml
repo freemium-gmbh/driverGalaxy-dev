@@ -154,7 +154,7 @@
 					<ColumnDefinition Width="194" />
 				</Grid.ColumnDefinitions>
 				<Image Style="{StaticResource FunctionalButtonImage}"
-					   Margin="10,6,0,0"
+					   Margin="2,2,0,0"
 					   Source="../Images/icon-lamp.png" />
 				<Grid Grid.Column="1"
 					  VerticalAlignment="Top">
@@ -172,7 +172,7 @@
 			</Grid>
 		</Border>
         <Border BorderBrush="{x:Null}" Width="655" Height="293" Grid.ColumnSpan="2" Grid.RowSpan="4">
-            <TextBlock Background="White" Foreground="LightGray" FontFamily="/DriversGalaxy;component/Fonts/#Helvetica Neue CE 75" FontSize="25" VerticalAlignment="Center" Margin="2,0,11,0" Name="textBlock1" Text="This function is disabled while scanning/downloading/updating." TextAlignment="Center" TextWrapping="Wrap" 
+            <TextBlock Background="#1a1a1a" Foreground="LightGray" FontFamily="/DriversGalaxy;component/Fonts/#Helvetica Neue CE 75" FontSize="25" VerticalAlignment="Center" Margin="0,0,11,0" Name="textBlock1" Text="This function is disabled while scanning/downloading/updating." TextAlignment="Center" TextWrapping="Wrap" 
                        Visibility="{Binding Path=Status, Converter={StaticResource ScanStatusToVisibilityConverter}}"/>
         </Border>
     </Grid>

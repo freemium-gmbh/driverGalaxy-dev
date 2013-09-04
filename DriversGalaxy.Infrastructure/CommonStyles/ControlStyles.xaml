@@ -10,30 +10,40 @@
 	<LinearGradientBrush x:Key="ScanForIssueMouseOver"
 						 EndPoint="0.5,1"
 						 StartPoint="0.5,0">
-		<GradientStop Color="#B0D459" />
-		<GradientStop Color="#75BB4F"
+        <GradientStop Color="#68b98a" />
+        <GradientStop Color="#42a96e"
 					  Offset="0.752" />
-		<GradientStop Color="#50AA4C"
+        <GradientStop Color="#42a96e"
 					  Offset="1" />
 	</LinearGradientBrush>
 
 	<LinearGradientBrush x:Key="ScanForIssueBorder"
 						 EndPoint="0.5,1"
 						 StartPoint="0.5,0">
-        <GradientStop Color="#529c68"
+        <GradientStop Color="#50a96a"
 					  Offset="0" />
         <GradientStop Color="#50a96a"
 					  Offset="1" />
 	</LinearGradientBrush>
 
-	<LinearGradientBrush x:Key="ScanForIssueInnerBorder"
+    <LinearGradientBrush x:Key="ScanForIssueBorderMouseOver"
 						 EndPoint="0.5,1"
 						 StartPoint="0.5,0">
-        <GradientStop Color="#50a96a"
+        <GradientStop Color="#68b98a"
 					  Offset="0" />
-        <GradientStop Color="#529c68"
+        <GradientStop Color="#68b98a"
+					  Offset="1" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="ScanForIssueInnerBorder"
+						 EndPoint="0.5,1"
+						 StartPoint="0.5,0">
+        <GradientStop Color="#249445"
+					  Offset="0" />
+        <GradientStop Color="#249445"
 					  Offset=".4" />
 	</LinearGradientBrush>
+    
 
 	<LinearGradientBrush x:Key="ButtonBackground"
 						 EndPoint="0.5,1"
@@ -47,9 +57,9 @@
 	<LinearGradientBrush x:Key="ButtonMouseOver"
 						 EndPoint="0.5,1"
 						 StartPoint="0.5,0">
-		<GradientStop Color="#FF21D2E7"
+		<GradientStop Color="#249445"
 					  Offset="0" />
-		<GradientStop Color="#FF11ACCF"
+		<GradientStop Color="#249445"
 					  Offset="1" />
 	</LinearGradientBrush>
 
@@ -104,7 +114,7 @@
 					 Color="#000000" />
 
 	<SolidColorBrush x:Key="ElementColor"
-					 Color="#FF808080" />
+					 Color="#878787" />
 
 	<LinearGradientBrush x:Key="ListViewSelectedItemBackground"
 						 EndPoint="0.5,1"
@@ -118,18 +128,18 @@
 	<LinearGradientBrush x:Key="GreenGradient"
 						 EndPoint="0.5,1"
 						 StartPoint="0.5,0">
-        <GradientStop Color="#249445"
+        <GradientStop Color="#01944f"
 					  Offset="0" />
-        <GradientStop Color="#1d6a33"
+        <GradientStop Color="#01944f"
 					  Offset="1" />
 	</LinearGradientBrush>
 
 	<LinearGradientBrush x:Key="GreenBorderGradient"
 						 EndPoint="0.5,1"
 						 StartPoint="0.5,0">
-		<GradientStop Color="#88B435"
+        <GradientStop Color="#01944f"
 					  Offset="0" />
-		<GradientStop Color="#44973F"
+        <GradientStop Color="#01944f"
 					  Offset="1" />
 	</LinearGradientBrush>
 
@@ -327,15 +337,6 @@
 				Value="0,3,0,0" />
 		<Setter Property="FocusVisualStyle"
 				Value="{x:Null}" />
-		<Setter Property="Effect">
-			<Setter.Value>
-				<DropShadowEffect Direction="-90"
-								  ShadowDepth="1"
-								  Opacity="1"
-								  Color="#E2E6E6"
-								  BlurRadius="2" />
-			</Setter.Value>
-		</Setter>
 		<Setter Property="Control.Template">
 			<Setter.Value>
 				<ControlTemplate TargetType="{x:Type Button}">
@@ -343,7 +344,8 @@
 							Background="{TemplateBinding Panel.Background}"
 							BorderBrush="{TemplateBinding Border.BorderBrush}"
 							BorderThickness="{TemplateBinding Border.BorderThickness}"
-							CornerRadius="20">
+							CornerRadius="20"
+                            Name="Outer">
 						<Border CornerRadius="20"
 								BorderThickness="0,1,0,0"
 								BorderBrush="{StaticResource ScanForIssueInnerBorder}"
@@ -356,7 +358,7 @@
 								<ContentPresenter.Effect>
 									<DropShadowEffect BlurRadius="1"
 													  Direction="90"
-													  Color="#96C46B"
+													  Color="#59956a"
 													  ShadowDepth="1" />
 								</ContentPresenter.Effect>
 							</ContentPresenter>
@@ -369,6 +371,15 @@
 							<Setter TargetName="Inner"
 									Property="Panel.Background"
 									Value="{StaticResource ScanForIssueMouseOver}" />
+                            <Setter TargetName="Inner"
+									Property="Border.BorderBrush"
+									Value="{StaticResource ScanForIssueBorderMouseOver}" />
+                            <Setter TargetName="Outer"
+									Property="Panel.Background"
+									Value="{StaticResource ScanForIssueMouseOver}" />                           
+                            <Setter Property="Border.BorderBrush"
+				                    Value="{StaticResource ScanForIssueBorderMouseOver}" />
+
 						</Trigger>
 					</ControlTemplate.Triggers>
 
@@ -398,7 +409,7 @@
 		<Setter Property="TextElement.FontWeight"
 				Value="Bold" />
 		<Setter Property="Border.BorderBrush"
-				Value="{StaticResource ButtonBorder}" />
+				Value="#50a96a" />
 		<Setter Property="Border.BorderThickness"
 				Value="1" />
 		<Setter Property="TextElement.Foreground"
@@ -408,16 +419,7 @@
 		<Setter Property="FrameworkElement.Margin"
 				Value="2,2,0,0" />
 		<Setter Property="FocusVisualStyle"
-				Value="{x:Null}" />
-		<Setter Property="Effect">
-			<Setter.Value>
-				<DropShadowEffect Direction="-90"
-								  ShadowDepth="1"
-								  Opacity="1"
-								  Color="#E2E6E6"
-								  BlurRadius="2" />
-			</Setter.Value>
-		</Setter>
+				Value="{x:Null}" />		
 		<Setter Property="Control.Template">
 			<Setter.Value>
 				<ControlTemplate TargetType="{x:Type Button}">
@@ -1185,18 +1187,11 @@
 					<BulletDecorator Background="Transparent">
 						<BulletDecorator.Bullet>
 							<Grid Width="14"
-								  Height="14">
-								<Grid.Effect>
-									<DropShadowEffect Direction="-90"
-													  ShadowDepth="1"
-													  Opacity="1"
-													  Color="#E2E6E6"
-													  BlurRadius="1" />
-								</Grid.Effect>
+								  Height="14">								
 								<Ellipse x:Name="Border"
-										 Fill="{StaticResource NormalBrush}"
+										 Fill="#000000"
 										 StrokeThickness="1"
-										 Stroke="{StaticResource NormalBorderBrush}">
+										 Stroke="#2a2a2a">
 								</Ellipse>
 								<Ellipse x:Name="CheckMark"
 										 Margin="4"
@@ -1253,7 +1248,7 @@
 		<Setter Property="Margin"
 				Value="0" />
 		<Setter Property="TextElement.Foreground"
-				Value="#878787" />
+				Value="#878787" />        
 		<Setter Property="FontFamily"
 				Value="/DriversGalaxy.Infrastructure;component/Fonts/#Helvetica Neue CE 75" />
 		<Setter Property="TextElement.FontSize"
@@ -1265,7 +1260,7 @@
 		<Setter Property="FrameworkElement.Margin"
 				Value="4" />
 		<Setter Property="Shape.Stroke"
-				Value="#FF7C919E" />
+				Value="#181818" />
 		<Setter Property="Shape.StrokeThickness"
 				Value="2" />
 		<Setter Property="Shape.StrokeStartLineCap"
@@ -1420,10 +1415,10 @@
 															  MinWidth="{Binding ElementName=MainGrid,Path=ActualWidth}">-->
 								<Border Name="DropDownBorder"
 										BorderThickness="1"
-										BorderBrush="#FFC0C0C0"
+										BorderBrush="#000000"
 										CornerRadius="5"
 										Margin="0,2,0,0"
-										Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}">
+										Background="#3d3d3d">
 									<ScrollViewer CanContentScroll="True">
 										<ItemsPresenter KeyboardNavigation.DirectionalNavigation="Contained"
 														SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
@@ -1908,7 +1903,7 @@
 					 BorderThickness="1"
 					 CornerRadius="0,4,4,0">
 				<Grid>
-					<Rectangle Fill="#FF098CB9"
+                    <Rectangle Fill="#424242"
 							   HorizontalAlignment="Left"
 							   Height="1"
 							   Margin="7,11,0,0"
@@ -1917,7 +1912,7 @@
 							   Width="7" />
 					<Path x:Name="Arrow"
 						  Margin="7,12,0,0"
-						  Fill="#FFFFFF"
+						  Fill="#181818"
 						  HorizontalAlignment="Left"
 						  VerticalAlignment="Top"
 						  Data="M0,0L7,0 7,1.00000000372529 6,1.00000000372529 6,2.00000000372529 5,2.00000000372529 5,3.00000000372529 4,3.00000000372529 4,4.00000000372529 3,4.00000000372529 3,3.00000000372529 2,3.00000000372529 2,2.00000000372529 1,2.00000000372529 1,1.00000000372529 0,1.00000000372529z">
@@ -1931,6 +1926,9 @@
 				<Setter TargetName="Border"
 						Property="Background"
 						Value="{StaticResource ButtonMouseOver}" />
+                <Setter TargetName="Arrow"
+						Property="Fill"
+						Value="White" />
 			</Trigger>
 			<!--<Trigger Property="ToggleButton.IsChecked"
 					 Value="true">
@@ -1939,18 +1937,10 @@
 						Value="{StaticResource PressedBrush}" />
 			</Trigger>-->
 			<Trigger Property="IsEnabled"
-					 Value="False">
-				<Setter TargetName="Border"
-						Property="Background"
-						Value="{StaticResource DisabledBackgroundBrush}" />
-				<Setter TargetName="Border"
-						Property="BorderBrush"
-						Value="{StaticResource DisabledBorderBrush}" />
-				<Setter Property="Foreground"
-						Value="{StaticResource DisabledForegroundBrush}" />
+					 Value="False">				
 				<Setter TargetName="Arrow"
 						Property="Fill"
-						Value="{StaticResource DisabledForegroundBrush}" />
+						Value="#363636" />
 			</Trigger>
 		</ControlTemplate.Triggers>
 	</ControlTemplate>
@@ -2047,10 +2037,14 @@
 									Property="MinHeight"
 									Value="95" />
 						</Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background"
+						            Value="#249445" />                            
+                        </Trigger>
 						<Trigger Property="IsEnabled"
 								 Value="false">
 							<Setter Property="Foreground"
-									Value="#CCCCCC" />
+									Value="#5e5e5e" />
 						</Trigger>
 						<Trigger Property="IsGrouping"
 								 Value="true">
@@ -2305,12 +2299,12 @@
 								 Value="True">
 							<Setter TargetName="Bd"
 									Property="Background"
-									Value="#e0eff8" />
+									Value="#249445" />
+                            <Setter Property="Foreground"
+									Value="#FFFFFF" />
 							<Setter TargetName="Bd"
 									Property="BorderBrush"
-									Value="#e0eff8" />
-							<Setter Property="Foreground"
-									Value="#FF3F6577" />
+									Value="#249445" />
 						</Trigger>
 						<MultiTrigger>
 							<MultiTrigger.Conditions>
@@ -2822,10 +2816,10 @@
 		<Setter Property="Placement"
 				Value="Center"></Setter>
 		<Setter Property="VerticalOffset"
-				Value="-30"></Setter>
-	</Style>
+				Value="-30"></Setter>        
+    </Style>
 
-	<Style x:Key="HelpIconButton"
+    <Style x:Key="HelpIconButton"
 		   TargetType="{x:Type Button}">
 		<Setter Property="UIElement.SnapsToDevicePixels"
 				Value="True" />

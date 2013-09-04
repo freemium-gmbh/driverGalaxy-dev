@@ -256,7 +256,7 @@
 					</StackPanel>
 				</StackPanel>
 
-				<Button Style="{StaticResource BlueRoundedButton}"
+				<Button Style="{StaticResource GreenRoundedButton}"
 						Grid.Column="2"
 						Width="149"
 						Command="{Binding CloseCommand}"

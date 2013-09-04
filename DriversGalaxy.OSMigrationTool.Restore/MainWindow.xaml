@@ -120,7 +120,7 @@
 						</Grid.OpacityMask>
 						<Path x:Name="Shape"
 							  Style="{StaticResource PanelTitleFigure}"
-							  Stroke="#FFFFFF"
+							  Stroke="#000000"
 							  Stretch="Fill"
 							  Width="710"
 							  VerticalAlignment="Top"
@@ -130,7 +130,7 @@
 							  Fill="{DynamicResource TitlePanelsBackgroundColor}">
 						</Path>
 						<Path Style="{StaticResource PanelTitleFigure}"
-							  Stroke="#FFFFFF"
+							  Stroke="#000000"
 							  Stretch="Fill"
 							  VerticalAlignment="Top"
 							  Fill="{StaticResource NoiseBrush}"
@@ -140,7 +140,7 @@
 							  Grid.ColumnSpan="2">
 						</Path>
 						<Path Style="{StaticResource PanelTitleFigure}"
-							  Stroke="#FFFFFF"
+							  Stroke="#000000"
 							  Stretch="Fill"
 							  Width="710"
 							  VerticalAlignment="Top"

@@ -258,7 +258,7 @@ namespace DriversGalaxy.ViewModels
         readonly ICommand checkDeviceForUpdateCommand;
         readonly ICommand verifyLicenseKeyCommand;
         readonly ICommand enterLicenseKeyCommand;
-        readonly ICommand updateCommand;        
+        readonly ICommand updateCommand;
         readonly ICommand cancelUpdateCommand;
 
         public ICommand ScanCommand
@@ -285,7 +285,7 @@ namespace DriversGalaxy.ViewModels
         {
             get { return checkDeviceForUpdateCommand; }
         }
-        
+
         public ICommand EnterLicenseKeyCommand
         {
             get { return enterLicenseKeyCommand; }
@@ -558,7 +558,7 @@ namespace DriversGalaxy.ViewModels
                     SaveExcludedDevicesToXML();
                     WPFMessageBox.Show(Application.Current.MainWindow, LocalizeDictionary.Instance.Culture, String.Format(WPFLocalizeExtensionHelpers.GetUIString("DriverExcluded"), device.DeviceName), "Device excluded", WPFMessageBoxButton.OK, MessageBoxImage.Information);
 
-                    ScanFinishTitle = String.Format("{0} " + WPFLocalizeExtensionHelpers.GetUIString("OutdatedDriversFound"), DevicesForScanning.Count(d => d.NeedsUpdate));
+                    ScanFinishTitle = String.Format("{{0}} " + WPFLocalizeExtensionHelpers.GetUIString("OutdatedDriversFound"), DevicesForScanning.Count(d => d.NeedsUpdate));
 
                     if (DevicesThatNeedsUpdate.IsEmpty)
                     {
@@ -1683,7 +1683,8 @@ namespace DriversGalaxy.ViewModels
             if (bgScan.IsBusy)
                 bgScan.CancelAsync();
 
-            cancelEvtArgs.Set();
+            if (cancelEvtArgs != null)
+                cancelEvtArgs.Set();
             //            CancelOperation();
         }
 
@@ -1702,17 +1703,17 @@ namespace DriversGalaxy.ViewModels
         {
             bool result = false;
             RegistryKey reg = Registry.LocalMachine.OpenSubKey("Software\\DriversGalaxy");
-            string activationKey=string.Empty;
+            string activationKey = string.Empty;
             if (reg != null)
             {
                 if (reg.GetValue("ActivationKey") != null)
                     activationKey = reg.GetValue("ActivationKey").ToString();
-                
+
                 if (!string.IsNullOrEmpty(activationKey))
                 {
                     if (IsValidLicense("driversgalaxy1", activationKey))
                         result = true;
-                }          
+                }
             }
             return result;
         }
@@ -1737,10 +1738,10 @@ namespace DriversGalaxy.ViewModels
             }
             return result;
         }
-        
+
 
         private bool IsValidLicense(string product, string key)
-        {        
+        {
             string url = string.Format("http://license-management.azurewebsites.net/GetKeyValidUntil/{0}/{1} ", product, key);
 
             System.Net.WebRequest req = System.Net.WebRequest.Create(url);
@@ -1779,7 +1780,7 @@ namespace DriversGalaxy.ViewModels
                     WPFMessageBox.Show(Application.Current.MainWindow, LocalizeDictionary.Instance.Culture, WPFLocalizeExtensionHelpers.GetUIString("WrongLicenseKey"),
                                       "", WPFMessageBoxButton.OKCancel, MessageBoxImage.Warning);
                 }
-            }            
+            }
         }
 
         void RunUpdate()
@@ -1826,9 +1827,9 @@ namespace DriversGalaxy.ViewModels
                     }
                 }
                 else
-                {                    
+                {
                     PanelScanHeader = WPFLocalizeExtensionHelpers.GetUIString("UpgradeNow");
-                    Status = ScanStatus.PaymentNeeded;                    
+                    Status = ScanStatus.PaymentNeeded;
                 }
             }
             else

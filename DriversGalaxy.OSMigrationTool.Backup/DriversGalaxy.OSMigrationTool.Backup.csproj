@@ -38,7 +38,7 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>driver.ico</ApplicationIcon>
+    <ApplicationIcon>DriverGalaxy.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
@@ -224,6 +224,7 @@
     <Resource Include="Images\google.png" />
     <Resource Include="Images\tw.png" />
     <Resource Include="Images\tw_bg.png" />
+    <Resource Include="DriverGalaxy.ico" />
     <Content Include="Libraries\Ionic.Zip.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

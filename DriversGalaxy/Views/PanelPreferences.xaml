@@ -45,6 +45,7 @@
 				   Style="{StaticResource ElementCaption}"
 				   Grid.Column="1" />
 		<Border Style="{StaticResource CustomCheckBoxWrapSmall}"
+                Background="#3d3d3d"
 				Width="225"
 				Grid.Column="1"
 				Grid.Row="1"
@@ -61,6 +62,7 @@
 				   Style="{StaticResource ElementCaption}"
 				   Grid.Column="2" />
 		<Border Style="{StaticResource CustomCheckBoxWrapSmall}"
+                Background="#3d3d3d"
 				Grid.Column="2"
 				Grid.Row="1"
                 IsEnabled="{Binding Path=Status, Converter={StaticResource ScanStatusEqualsToEnablingConverter}}">
@@ -129,7 +131,7 @@
 					<ColumnDefinition Width="162" />
 				</Grid.ColumnDefinitions>
 				<Image Style="{StaticResource FunctionalButtonImage}"
-					   Margin="10,6,0,0"
+					   Margin="2,2,0,0"
 					   Source="../Images/icon-lamp.png" />
 				<Grid Grid.Column="1"
 					  VerticalAlignment="Top">

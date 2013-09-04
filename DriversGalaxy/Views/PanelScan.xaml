@@ -125,7 +125,7 @@
 					<ColumnDefinition Width="209" />
 				</Grid.ColumnDefinitions>
 				<Image Style="{StaticResource FunctionalButtonImage}"
-					   Margin="10,6,0,0"
+					   Margin="2,2,0,0"                       
 					   Source="../Images/icon-lamp.png" />
 				<Grid Grid.Column="1"
 					  VerticalAlignment="Top">
@@ -175,7 +175,7 @@
 					</Grid.RowDefinitions>
 					<TextBlock Margin="19,10,0,0"
 							   Text="{lex:LocText DriversGalaxy:Resources:Scan}"
-							   Style="{StaticResource ComboboxCaption}" />
+							   Style="{StaticResource ComboboxCaption}" Height="17" VerticalAlignment="Top" />
                     <ComboBox Width="125"
 							  Margin="19,0,0,0"
 							  Grid.Row="1"

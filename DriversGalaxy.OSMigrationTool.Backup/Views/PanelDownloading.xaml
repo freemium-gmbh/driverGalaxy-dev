@@ -34,7 +34,7 @@
 						 Text="{Binding Path=DestinationDirectory, Mode=TwoWay, TargetNullValue={x:Static sys:String.Empty}, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}"
 						 Name="DestinationDirectory"
 						 MouseDoubleClick="DestinationDirectory_MouseDoubleClick"></TextBox>
-				<Button Style="{StaticResource BlueButton}"
+				<Button Style="{StaticResource GreenButton}"
 						Name="SelectDestinationDirectory"
 						Click="SelectDestinationDirectory_Click">...</Button>
 			</StackPanel>
@@ -112,14 +112,14 @@
 					</StackPanel>
 				</StackPanel>
 
-				<Button Style="{StaticResource BlueRoundedButton}"
+				<Button Style="{StaticResource GreenRoundedButton}"
 						Grid.Column="2"
 						Width="149"
 						Command="{Binding CancelDownloadDriversCommand}"
 						Content="{lex:LocText DriversGalaxy.OSMigrationTool.Backup:Resources:CancelDownload}"
 						Visibility="{Binding Path=Status, Converter={StaticResource PropertyEqualsToVisibilityConverter}, ConverterParameter={x:Static models:ScanStatus.DownloadStarted}}" />
 
-				<Button Style="{StaticResource BlueRoundedButton}"
+				<Button Style="{StaticResource GreenRoundedButton}"
 						Grid.Column="2"
 						Width="149"
 						Command="{Binding ComposeCommand}"

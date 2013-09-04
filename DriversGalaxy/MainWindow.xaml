@@ -336,7 +336,7 @@
                         <ColumnDefinition Width="234" />
                     </Grid.ColumnDefinitions>
 
-                    <Button Style="{StaticResource NavigationButtonFirstSelected}"
+                    <Button Style="{StaticResource NavigationButton}"
 							Click="ShowPanelScan"
 							Name="LinkPanelScan">
                         <Button.Content>

@@ -145,15 +145,15 @@
 												CommandParameter="{Binding Id}"
 												IsEnabled="{Binding DataContext.InitialScanFinished, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}">
 											<Button.ToolTip>
-												<ToolTip Content="{lex:LocText DriversGalaxy:Resources:ExcludeFromScans}"
-														 HorizontalOffset="-16" />
+                                                <ToolTip Content="{lex:LocText DriversGalaxy:Resources:ExcludeFromScans}"
+														 HorizontalOffset="-16"/>
 											</Button.ToolTip>
 											<Grid>
-												<Image Source="/DriversGalaxy;component/Images/icon-option-exclude.png"
+                                                <Image Source="/DriversGalaxy;component/Images/icon-option-exclude.png" Height="16" Width="17"
 													   Visibility="{Binding Path=DataContext.InitialScanFinished, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=True}" />
-												<Image Source="/DriversGalaxy;component/Images/icon-option-exclude-grey.png"
+                                                <Image Source="/DriversGalaxy;component/Images/icon-option-exclude-grey.png"
 													   Visibility="{Binding Path=DataContext.InitialScanFinished, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=False}" />
-											</Grid>
+                                            </Grid>
 										</Button>
 									</StackPanel>
 								</DataTemplate>

@@ -35,7 +35,7 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>driver.ico</ApplicationIcon>
+    <ApplicationIcon>DriverGalaxy.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
@@ -340,6 +340,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Resource Include="Images\icon-info.png" />
+    <Resource Include="DriverGalaxy.ico" />
+    <Resource Include="Images\DriverGalaxy.ico" />
+    <None Include="Resources\DriverGalaxy.bmp" />
     <Content Include="stduhelper32.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -379,7 +382,6 @@
     <Resource Include="Images\tw_bg.png" />
     <Resource Include="Images\DriverScoutLogo.png" />
     <Resource Include="driver.ico" />
-    <Resource Include="Images\driver.ico" />
     <Resource Include="Images\bg-logo-flame.png" />
     <Resource Include="Images\bg-logo.png" />
     <Resource Include="Images\loading.gif" />

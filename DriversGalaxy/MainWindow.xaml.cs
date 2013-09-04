@@ -50,9 +50,9 @@ namespace DriversGalaxy
             DataContext = model;
 
             navigationButtonStyle = (Style)FindResource("NavigationButton");
-            navigationButtonSelectedStyle = (Style)FindResource("NavigationButtonSelected");
-            navigationButtonFirstStyle = (Style)FindResource("NavigationButtonFirst");
-            navigationButtonFirstSelectedStyle = (Style)FindResource("NavigationButtonFirstSelected");
+            navigationButtonSelectedStyle = (Style)FindResource("NavigationButton");
+            navigationButtonFirstStyle = (Style)FindResource("NavigationButton");
+            navigationButtonFirstSelectedStyle = (Style)FindResource("NavigationButton");
 
             ProcessFirstRun();
         }

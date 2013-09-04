@@ -23,8 +23,7 @@
 				<Grid.RowDefinitions>
 					<RowDefinition Height="94" />
 					<RowDefinition Height="67" />
-					<RowDefinition Height="368" />
-					<RowDefinition Height="31" />
+					<RowDefinition Height="399" />					
 				</Grid.RowDefinitions>
 
 				<!--
@@ -44,19 +43,11 @@
 							   Stretch="Uniform"
                                Width="255"
                                Height="63"/>
-						<TextBlock FontFamily="/DriversGalaxy.Infrastructure;component/Fonts/#Myriad Pro"
+                        <TextBlock FontFamily="/DriversGalaxy.Infrastructure;component/Fonts/#Ubuntu"
 								   FontWeight="SemiBold"
-								   FontSize="30.5"
-								   Margin="-62,39,0,0"
-								   Foreground="#FF4E4E4E">
-						<TextBlock.Effect>
-							<DropShadowEffect BlurRadius="1"
-											  Color="#FFFFFFFF"
-											  Direction="-90"
-											  ShadowDepth="1"
-											  Opacity="1"
-											  RenderingBias="Performance" />
-						</TextBlock.Effect>
+								   FontSize="24"
+								   Margin="-190,55,0,0"
+								   Foreground="#747474">						
 						OS Migration Tool</TextBlock>
 						<DockPanel VerticalAlignment="Top"
 								   Margin="8,10,10,0"
@@ -118,7 +109,7 @@
 						</Grid.OpacityMask>
 						<Path x:Name="Shape"
 							  Style="{StaticResource PanelTitleFigure}"
-							  Stroke="#FFFFFF"
+							  Stroke="#000000"
 							  Stretch="Fill"
 							  Width="710"
 							  VerticalAlignment="Top"
@@ -128,7 +119,7 @@
 							  Fill="{DynamicResource TitlePanelsBackgroundColor}">
 						</Path>
 						<Path Style="{StaticResource PanelTitleFigure}"
-							  Stroke="#FFFFFF"
+							  Stroke="#000000"
 							  Stretch="Fill"
 							  VerticalAlignment="Top"
 							  Fill="{StaticResource NoiseBrush}"
@@ -138,7 +129,7 @@
 							  Grid.ColumnSpan="2">
 						</Path>
 						<Path Style="{StaticResource PanelTitleFigure}"
-							  Stroke="#FFFFFF"
+							  Stroke="#000000"
 							  Stretch="Fill"
 							  Width="710"
 							  VerticalAlignment="Top"
@@ -209,35 +200,7 @@
 					</views:PanelScanFinished>
 
 				</Grid>
-
-
-				<!--
-					*****************************************************************************
-					
-					Footer
-					
-					*****************************************************************************
-					-->
-
-				<Grid Grid.Row="3">
-					<Border Style="{StaticResource PanelFooterBorder}">
-						<Border Style="{StaticResource PanelFooterBorderNoisy}">
-							<DockPanel LastChildFill="True">
-								<Image Style="{StaticResource PanelSwitcherImage}"
-									   Width="77"
-									   HorizontalAlignment="Right"
-									   DockPanel.Dock="Right"
-									   Margin="2,8,215,0"
-									   Source="Images/bg-logo-small.png" />
-								<TextBlock Style="{StaticResource PanelFooterText}"
-										   Text="{lex:LocText DriversGalaxy.OSMigrationTool.Backup:Resources:FooterText}" />
-							</DockPanel>
-						</Border>
-					</Border>
-				</Grid>
-
-			</Grid>
-
+            </Grid>
 		</Border>
 	</Border>
 </Window>

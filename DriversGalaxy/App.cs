@@ -50,7 +50,7 @@ namespace DriversGalaxy
             window.Show();
             notifyIcon = new System.Windows.Forms.NotifyIcon
             {
-                Icon = DriversGalaxy.Properties.Images.driver,
+                Icon = DriversGalaxy.Properties.Images.DriverGalaxy,
                 Text = "DriversGalaxy",
                 Visible = true
             };
