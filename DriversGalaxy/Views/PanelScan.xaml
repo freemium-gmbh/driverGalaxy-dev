@@ -43,10 +43,17 @@
 				  HorizontalAlignment="Left"
 				  VerticalAlignment="Top">
 				<Ellipse Margin="0"
-						 Stroke="#212121"
+						 Stroke="#000000"                         
 						 HorizontalAlignment="Left"
+                         Fill="#0d0d0d"
 						 Width="152"
-						 Height="152">                    
+						 Height="152">
+                    <Ellipse.Effect>
+                        <DropShadowEffect Direction="0"
+										  ShadowDepth="0"
+										  Color="#212121"
+										  BlurRadius="3" />
+                    </Ellipse.Effect>
                 </Ellipse>
                 <Ellipse Margin="5 0 0 0"
 						 Width="142"
@@ -69,10 +76,11 @@
 							Radius="71"
 							InnerRadius="60"
 							Stroke="#0d0d0d"
+                            StrokeThickness="2"
 							Fill="#0d0d0d">
 				</b:PiePiece>
 				<Ellipse Margin="20,0,20,20"
-						 Stroke="#111111"
+						 Stroke="#000000"
 						 Width="112"
 						 Height="112"
 						 Fill="#242424"

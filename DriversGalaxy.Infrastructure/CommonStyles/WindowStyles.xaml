@@ -525,16 +525,7 @@
 		<Setter Property="FontSize"
 				Value="13" />
 		<Setter Property="Margin"
-				Value="0,13,0,0" />
-		<Setter Property="Panel.Effect">
-			<Setter.Value>
-				<DropShadowEffect BlurRadius="1"
-								  Color="#b3b3b3"
-								  Direction="-90"
-								  ShadowDepth="1"
-								  RenderingBias="Performance" />
-			</Setter.Value>
-		</Setter>
+				Value="0,13,0,0" />		
 	</Style>
 
 	<Style x:Key="PanelFooterBorder"

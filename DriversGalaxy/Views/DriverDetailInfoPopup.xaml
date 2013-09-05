@@ -8,8 +8,7 @@
 		Name="driverDetailInfo"
 		Height="311"
 		Width="500"
-		Style="{StaticResource BaseWindowStyle}"
-        Background="#000000"
+		Style="{StaticResource BaseWindowStyle}"        
 		ShowInTaskbar="False">
     <Border CornerRadius="5"
 			Padding="10" Height="267">

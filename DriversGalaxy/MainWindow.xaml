@@ -88,9 +88,9 @@
                             </Button>
                             <ComboBox Style="{StaticResource ComboboxStyle}"
 									  SelectionChanged="OptionChanged">
-                                <ComboBoxItem Content="{lex:LocText DriversGalaxy:Resources:Preferences}"></ComboBoxItem>
-                                <ComboBoxItem Content="{lex:LocText DriversGalaxy:Resources:RunOSMigrationTool}"></ComboBoxItem>
-                                <ComboBoxItem Content="{lex:LocText DriversGalaxy:Resources:FeedbackReport}"></ComboBoxItem>
+                                <ComboBoxItem Style="{StaticResource UpperComboBoxItem}" Content="{lex:LocText DriversGalaxy:Resources:Preferences}"></ComboBoxItem>
+                                <ComboBoxItem Style="{StaticResource UpperComboBoxItem}" Content="{lex:LocText DriversGalaxy:Resources:RunOSMigrationTool}"></ComboBoxItem>
+                                <ComboBoxItem Style="{StaticResource UpperComboBoxItem}" Content="{lex:LocText DriversGalaxy:Resources:FeedbackReport}"></ComboBoxItem>
                             </ComboBox>
                             <Button Style="{StaticResource MinimizeButton}" Click="MinimizeApp">
                                 <Button.ToolTip>
