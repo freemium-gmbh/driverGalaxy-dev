@@ -2194,7 +2194,7 @@
 		<Setter Property="HorizontalAlignment"
 				Value="Left" />
 		<Setter Property="BorderThickness"
-				Value="1" />
+				Value="1.000001" />
 		<Setter Property="BorderBrush"
 				Value="{StaticResource ElementBorder}" />
 		<Setter Property="ScrollViewer.VerticalScrollBarVisibility"

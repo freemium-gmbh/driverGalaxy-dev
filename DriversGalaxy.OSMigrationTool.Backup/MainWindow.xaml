@@ -38,18 +38,18 @@
 						Background="{StaticResource ContentBackGround}">
 					<DockPanel HorizontalAlignment="Stretch"
 							   VerticalAlignment="Top">
-						<Image Margin="0,0,0,0"
+						<Image Margin="12,11,0,0"
 							   Source="Images/bg-logo.png"
 							   Stretch="Uniform"
                                Width="255"
                                Height="63"/>
                         <TextBlock FontFamily="/DriversGalaxy.Infrastructure;component/Fonts/#Ubuntu"
-								   FontWeight="SemiBold"
-								   FontSize="24"
+								   FontWeight="Medium"
+								   FontSize="12"
 								   Margin="-190,55,0,0"
 								   Foreground="#747474">						
-						OS Migration Tool</TextBlock>
-						<DockPanel VerticalAlignment="Top"
+						OS MIGRATION TOOL</TextBlock>
+                        <DockPanel VerticalAlignment="Top"
 								   Margin="8,10,10,0"
 								   HorizontalAlignment="Right"
 								   DockPanel.Dock="Right">

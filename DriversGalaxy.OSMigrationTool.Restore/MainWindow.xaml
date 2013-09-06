@@ -42,24 +42,16 @@
                         <Image Margin="12,11,0,0"
 							   Source="Images/bg-logo.png"
 							   Stretch="Uniform"
-                               Width="123"
-                               Height="69"
+                               Width="255"
+                               Height="63"
 							   HorizontalAlignment="Left"
 							   VerticalAlignment="Top" />
-                        <TextBlock FontFamily="/DriversGalaxy.Infrastructure;component/Fonts/#Myriad Pro"
-								   FontWeight="SemiBold"
-								   FontSize="30.5"
-								   Margin="-62,39,0,0"
-								   Foreground="#FF4E4E4E">
-						<TextBlock.Effect>
-							<DropShadowEffect BlurRadius="1"
-											  Color="#FFFFFFFF"
-											  Direction="-90"
-											  ShadowDepth="1"
-											  Opacity="1"
-											  RenderingBias="Performance" />
-						</TextBlock.Effect>
-						OS Migration Tool</TextBlock>
+                        <TextBlock FontFamily="/DriversGalaxy.Infrastructure;component/Fonts/#Ubuntu"
+								   FontWeight="Medium"
+								   FontSize="12"
+								   Margin="-190,55,0,0"
+								   Foreground="#747474">						
+						OS MIGRATION TOOL</TextBlock>                        												
 						<DockPanel VerticalAlignment="Top"
 								   Margin="8,10,10,0"
 								   HorizontalAlignment="Right"
