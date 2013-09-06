@@ -53,7 +53,8 @@
 								   Margin="8,10,10,0"
 								   HorizontalAlignment="Right"
 								   DockPanel.Dock="Right">
-							<Button Style="{StaticResource HelpButton}"
+                            <Button Style="{StaticResource HelpButton}"
+                                    Click="OpenAboutBox"
 									FontFamily="/DriversGalaxy.Infrastructure;component/Fonts/#Helvetica Neue CE 55">
 								<TextBlock Text="i"
 										   FontFamily="Segoe UI"
@@ -61,7 +62,7 @@
 										   FontWeight="Bold" />
 								<Button.ToolTip>
 									<ToolTip Style="{x:Null}"
-											 Content="{lex:LocText DriversGalaxy.OSMigrationTool.Backup:Resources:Help}" />
+											 Content="{lex:LocText DriversGalaxy.OSMigrationTool.Backup:Resources:About}" />
 								</Button.ToolTip>
 							</Button>
 							<Button Style="{StaticResource MinimizeButton}"
