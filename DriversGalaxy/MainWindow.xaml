@@ -10,7 +10,7 @@
 		mc:Ignorable="d"
 		x:Class="DriversGalaxy.MainWindow"
 		Style="{StaticResource MainWindowStyle}"
-		Title="Free Drive Scout"
+		Title="Drivers Galaxy"
 		Name="AppMainWindow"
 		WindowStartupLocation="CenterScreen"
 		Width="716"

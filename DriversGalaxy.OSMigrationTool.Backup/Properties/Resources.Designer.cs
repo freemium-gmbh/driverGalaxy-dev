@@ -423,7 +423,7 @@ namespace DriversGalaxy.OSMigrationTool.Backup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to http://freemium.com/free-driver-scout/.
+        ///   Looks up a localized string similar to http://freemium.com/driversgalaxy/.
         /// </summary>
         internal static string RootUrl {
             get {
