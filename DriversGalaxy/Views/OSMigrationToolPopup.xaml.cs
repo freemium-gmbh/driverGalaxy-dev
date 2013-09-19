@@ -231,7 +231,7 @@ namespace FreemiumUtilites
 
         void RunOSMigrationTool(object sender, RoutedEventArgs e)
         {
-            AppStarter(appDir + @"\OSMigrationTool\DriversGalaxy.OSMigrationTool.Backup.exe");
+            AppStarter(appDir + @"\DriversGalaxy.OSMigrationTool.Backup.exe");
         }
 
         void RunOSMigrationRestoreTool(object sender, RoutedEventArgs e)
