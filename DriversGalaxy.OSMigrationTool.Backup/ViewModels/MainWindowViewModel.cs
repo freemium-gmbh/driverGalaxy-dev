@@ -258,7 +258,7 @@ namespace DriversGalaxy.OSMigrationTool.Backup.ViewModels
 
         StringBuilder szAppDataLoc;
         StringBuilder szTempLoc;
-        StringBuilder szProductKey = new StringBuilder().Append("18546-16122-13463");
+        StringBuilder szProductKey = new StringBuilder().Append("46288-11183-23588");
         StringBuilder szRegistryLoc = new StringBuilder().Append("Software\\DriversGalaxy");
         StringBuilder szRestorePointName = new StringBuilder().Append("DriversGalaxy");
         uint dwScanFlag = (uint)DUSDK_for.NET.DUSDKHandler.SCAN_FLAGS.SCAN_DEVICES_PRESENT;

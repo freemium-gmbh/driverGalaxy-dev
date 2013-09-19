@@ -334,12 +334,6 @@
     <Resource Include="DriverGalaxy.ico" />
     <Resource Include="Images\DriverGalaxy.ico" />
     <None Include="Resources\DriverGalaxy.bmp" />
-    <Content Include="stduhelper32.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="stduhelper64.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="unrar.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

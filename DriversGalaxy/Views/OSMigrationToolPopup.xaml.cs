@@ -238,7 +238,7 @@ namespace FreemiumUtilites
         {
             if (File.Exists(restoreZipPath.Text))
             {
-                var psi = new ProcessStartInfo(String.Format(@"{0}\OSMigrationTool\Restore\DriversGalaxy.OSMigrationTool.Restore.exe", appDir))
+                var psi = new ProcessStartInfo(String.Format(@"{0}\DriversGalaxy.OSMigrationTool.Restore.exe", appDir))
                 {
                     Arguments = "\"" + restoreZipPath.Text + "\""
                 };
