@@ -972,7 +972,7 @@ namespace DriversGalaxy.OSMigrationTool.Backup.ViewModels
                 if (!device.IsDestOSDriverAvailable)
                     continue;
 
-                MigrationDevicesGroup migrationDevicesGroup = GroupedDevices.Where(g => g.DeviceClass == device.DeviceClass).FirstOrDefault();
+                MigrationDevicesGroup migrationDevicesGroup = GroupedDevices.Where(g => g.DeviceClassName == device.DeviceClassName).FirstOrDefault();
                 if (migrationDevicesGroup == null)
                 {
                     GroupedDevices.Add(new MigrationDevicesGroup(device.DeviceClass, device.DeviceClassName, device.DeviceClassImageSmall, new List<MigrationDeviceInfo> { device }));
