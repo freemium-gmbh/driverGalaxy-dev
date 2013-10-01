@@ -279,9 +279,7 @@ namespace DriversGalaxy.OSMigrationTool.Backup.ViewModels
         #region Properties
 
         private ManualResetEvent cancelEvtArgs;
-        private Boolean scanCancelled = false;
-
-        readonly RegistryKey deviceClasses = Registry.LocalMachine.OpenSubKey(@"SYSTEM\CurrentControlSet\Control\Class\", true);
+        private Boolean scanCancelled = false;        
 
         BackgroundWorker DownloadingBackgroundWorker = new BackgroundWorker();
         BackgroundWorker ComposingBackgroundWorker = new BackgroundWorker();
